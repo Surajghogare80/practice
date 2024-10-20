@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 5px solid gray;
+            width: fit-content;
+            padding: 10px ;
+            border-radius: 10px;
+            display: block;
+            margin: 100px auto;
+            background-color: aliceblue;
+        }
+        .heading{
+            font-family:cursive
+        }
+
+        .btn-1{
+            margin: 10px;
+            width: 350px;
+            font-size: 20px;
+        }
+        .btn-2{
+            margin: 10px;
+            width: 350px;
+            font-size:20px ;
+        }
+        .btn-3{
+            padding: 15px;
+            margin-left: 90px;
+            border-radius: 5px;
+            background-color: darkgrey;
+        }
+        .clear{
+            padding: 15px;
+            margin-left: 90px;
+            border-radius: 5px;
+            background-color: darkgrey;
+        }
+        .result{
+            text-align: center;
+        }
+    </style>
+    
+</head>
+<body >
+   <div class="container">
+    <h1 class="heading">Simple calculator</h1>
+
+    <input type="text" id="num1" class="btn-1" placeholder="enter the first number">
+    <br/>
+    <input type="text" id="num2" class="btn-2" placeholder="enter the second number">
+
+    <p id="result" class="result">-</p>
+
+    <button class="clear" type="button" onclick="clearbtn()">
+        clear
+    </button>
+
+    <button class="btn-3" type="button" onclick="add()">
+        Add
+    </button>
+   
+   </div>
+
+   <script>
+    function add(){
+        const inputelement1=document.getElementById("num1");
+        const inputelement2=document.getElementById("num2");
+
+        const sum = parseInt(inputelement1.value) + parseInt(inputelement2.value);
+
+        const result = document.getElementById("result");
+
+        result.innerText=`sum  ${sum}`;
+    }    
+
+    function clearbtn()
+    {
+        const numelement1 = document.getElementById("num1");
+        numelement1.value= ' ';
+
+        const numelement2=document.getElementById("num2");
+        numelement2.value=' ';
+
+        const result = document.getElementById("result");
+        result.innerText=' - ';
+
+
+    }
+   </script>
+    
+</body> 
+</html>
