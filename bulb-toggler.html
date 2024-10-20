@@ -52,38 +52,30 @@
         <h1 class="heading">Bulb Toggler</h1>
         <img src="./bulb-off.png" height="450px" id="img">
         <div class="btn">
-            <button class="btn-1" onclick="bulboff()" type="button" id="off">
+            <button class="btn-1" onclick="toggle(true)" type="button" id="off">
                 Turn off
             </button>
-            <button class="btn-2" onclick="bulbon()" type="button" id="On">
+            <button class="btn-2" onclick="toggle(false)" type="button" id="On">
                 Turn on
             </button>
         </div>
     </div>
 
     <script>
-        function bulbon()
+        function toggle(turnoff)
         {
             const turnonbulb = document.getElementById('img');
-            turnonbulb.src = "./bulb-on.png";
-
             const body = document.getElementById('body');
             const background = document.getElementById('container');
-            background.style.backgroundColor= '#ffffff';
-            body.style.backgroundColor = '#ff9900'; 
 
+         
+                turnonbulb.src=turnoff ?'./bulb-off.png': "./bulb-on.png";
+                background.style.backgroundColor= turnoff ? '#595959': '#ffffff';
+                body.style.backgroundColor = turnoff ? ' rgb(176, 170, 170)':  '#ff9900';
+        
         }
 
-        function bulboff()
-        {
-            const turnoffbulb= document.getElementById('img')
-            turnoffbulb.src='./bulb-off.png';
-
-            const body = document.getElementById('body');
-            const background = document.getElementById('container');
-            background.style.backgroundColor= '#595959';
-            body.style.backgroundColor = ' rgb(176, 170, 170)'; 
-        }
+       
     </script>
     
 </body>
